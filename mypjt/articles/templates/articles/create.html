@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>CREATE PAGE</h1>
+<hr>
+{% comment %}
+form 요소 작성
+  1. 서버에 저장해야 하니까 method 는 POST 로 작성
+  2. POST 요청 보낼 때 csrf-token 이 반드시 있어야 하니까, 작성.
+{% endcomment %}
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="작성">
+</form>
+{% endblock content %}
